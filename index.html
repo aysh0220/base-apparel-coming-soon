@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italiana&display=swap"
+      rel="stylesheet"
+    />
+    <title>Base Apparel - Coming Soon</title>
+    <style>
+      /* Reset styling */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Body styling */
+
+      body {
+        font-family: "Italiana", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #f8f1f1;
+        margin: 0;
+      }
+
+      /* Logo styling */
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding: 10px;
+      }
+
+      /* Main container styling */
+      .container {
+        display: flex;
+        flex-direction: row;
+        max-width: 1000px;
+        width: 100%;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .content {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .content h1 {
+        font-size: 48px;
+        color: #b2a4a4;
+        line-height: 1.2;
+      }
+
+      .content p {
+        font-size: 16px;
+        color: #7c6c6c;
+        margin: 20px 0;
+      }
+
+      /* Email form styling */
+      form {
+        display: flex;
+        align-items: center;
+        border-radius: 40px;
+        box-shadow: 0 4px 8px rgba(243, 111, 143, 0.1);
+        overflow: hidden;
+        background: linear-gradient(
+          to right,
+          rgba(243, 111, 143, 0.1),
+          rgba(243, 111, 143, 0.3)
+        );
+      }
+
+      input[type="email"] {
+        border: none;
+        outline: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        color: #b2a4a4;
+        flex: 1;
+        background: transparent;
+      }
+
+      input[type="email"]::placeholder {
+        color: #b2a4a4;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 40px; /* Adjust padding for desired size */
+        border: none;
+        background: linear-gradient(
+          to right,
+          rgba(255, 245, 230, 0.1),
+          #f36f8f
+        ); /* 30% white opacity */
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 50px; /* Curved sides */
+        transition: background-color 0.3s;
+      }
+
+      /* button:hover {
+        background-color: #e05d7c;
+      } */
+
+      /* Image styling */
+      .image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      /* Responsive styling */
+      @media (max-width: 768px) {
+        .main-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .content h1 {
+          font-size: 36px;
+        }
+
+        .logo-container h1 {
+          font-size: 16px;
+        }
+
+        .image {
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container for Logo and Content -->
+    <div class="main-container">
+      <!-- Logo on the left side -->
+      <header class="logo-container">
+        <img src="./images/logo.svg" alt="Model in an orange shirt" />
+      </header>
+
+      <!-- Main Content -->
+      <div class="container">
+        <div class="content">
+          <h1>
+            W E ' R E<br /><span style="color: rgb(22, 22, 24)"
+              >C O M I N G<br />S O O N</span
+            >
+          </h1>
+          <p>
+            Hello fellow shoppers! We’re currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+          <form onsubmit="submitEmail(event)">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+            <button type="submit" id="submit-button">
+              <img src="./images/icon-arrow.svg" alt="Arrow Icon" />
+            </button>
+          </form>
+        </div>
+        <div class="image">
+          <img src="./images/hero-desktop.jpg" alt="Model in an orange shirt" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function submitEmail(event) {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        if (email) {
+          alert("Thank you for subscribing! We will keep you updated.");
+          document.getElementById("email").value = ""; // Clear input field
+        }
+      }
+    </script>
+  </body>
+</html>
